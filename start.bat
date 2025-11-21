@@ -24,7 +24,7 @@ echo Kochira no URL de access shite mite!!!
 echo.
 
 echo ==========================================
-docker-compose logs cloudflared 2>nul | findstr "https://" | findstr "trycloudflare.com"
+docker-compose logs cloudflared 2>nul | findstr "https://"
 echo ==========================================
 
 echo.

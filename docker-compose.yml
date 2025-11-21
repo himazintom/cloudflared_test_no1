@@ -16,11 +16,13 @@ services:
   cloudflared:
     image: cloudflare/cloudflared:latest
     container_name: cloudflared-tunnel
-    command: tunnel --no-autoupdate --url http://flask:5000
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
     networks:
       - app-network
     depends_on:
       - flask
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
 
 networks:
   app-network:
